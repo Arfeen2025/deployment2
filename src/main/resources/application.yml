@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: deployment2test
+
+userprofile:
+    name: Arfeen
+    age: 22
+    gender: male

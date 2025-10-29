@@ -51,7 +51,7 @@ jobs:
         run: |
           echo "Transferring JAR to server..."
           scp -i key.pem -o StrictHostKeyChecking=no ./deploy/*.jar \
-            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/app/myapp.jar
+            ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/home/${{ secrets.SERVER_USER }}/app/temp_myapp.jar
 
       - name: Deploy and restart service
         run: |
@@ -67,7 +67,7 @@ jobs:
             fi
 
             echo "Moving new JAR..."
-            mv /home/${USER}/app/myapp.jar /home/${USER}/app/myapp.jar
+            mv /home/${USER}/app/temp_myapp.jar /home/${USER}/app/myapp.jar
 
             echo "Starting service..."
             sudo systemctl daemon-reload

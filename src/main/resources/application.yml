@@ -3,6 +3,6 @@ spring:
         name: deployment2test
 
 userprofile:
-    name: Arfeen
+    name: ArfeenARM
     age: 22
     gender: male
